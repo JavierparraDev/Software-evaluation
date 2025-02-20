@@ -11,7 +11,6 @@ Currently, two official plugins are available:
 
 Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-- [Node.js](https://nodejs.org/) (v14 o superior recomendado)
+- [Node.js](https://nodejs.org/) 
 - [Git](https://git-scm.com/)
-
 
