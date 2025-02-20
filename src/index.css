@@ -3,13 +3,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: #216780;
+  color: #131313;
 }
 
 h1 {
   text-align: center;
   margin-top: 20px;
+  color: #fff;
 }
 
 form {
@@ -40,7 +41,7 @@ input, select, button {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #3b3da0;
   color: white;
   border: none;
   cursor: pointer;

@@ -4,6 +4,18 @@ import SecurityForm from './SecurityForm';
 import PortabilityForm from './PortabilityForm';
 import CompatibilityForm from './CompatibilityForm';
 
+// Componente genérico para los formularios selectivos
+const FormSelect = ({ name, label, value, onChange, required }) => (
+  <div>
+    <label>{label}</label>
+    <select name={name} value={value} onChange={onChange} required={required}>
+      <option value="">Seleccione una opción</option>
+      <option value="yes">Sí</option>
+      <option value="no">No</option>
+    </select>
+  </div>
+);
+
 const EvaluationForm = () => {
   const [evaluationData, setEvaluationData] = useState({
     usability: '',
@@ -23,44 +35,41 @@ const EvaluationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(evaluationData);
+    // Aquí podrías agregar lógica para enviar los datos a un servidor o API
   };
 
   return (
     <div>
       <h1>Formulario de Evaluación</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Usabilidad:</label>
-          <select name="usability" value={evaluationData.usability} onChange={handleChange} required>
-            <option value="">Seleccione una opción</option>
-            <option value="yes">Sí</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div>
-          <label>Seguridad:</label>
-          <select name="security" value={evaluationData.security} onChange={handleChange} required>
-            <option value="">Seleccione una opción</option>
-            <option value="yes">Sí</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div>
-          <label>Portabilidad:</label>
-          <select name="portability" value={evaluationData.portability} onChange={handleChange} required>
-            <option value="">Seleccione una opción</option>
-            <option value="yes">Sí</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div>
-          <label>Compatibilidad:</label>
-          <select name="compatibility" value={evaluationData.compatibility} onChange={handleChange} required>
-            <option value="">Seleccione una opción</option>
-            <option value="yes">Sí</option>
-            <option value="no">No</option>
-          </select>
-        </div>
+        <FormSelect 
+          name="usability" 
+          label="Usabilidad:" 
+          value={evaluationData.usability} 
+          onChange={handleChange} 
+          required 
+        />
+        <FormSelect 
+          name="security" 
+          label="Seguridad:" 
+          value={evaluationData.security} 
+          onChange={handleChange} 
+          required 
+        />
+        <FormSelect 
+          name="portability" 
+          label="Portabilidad:" 
+          value={evaluationData.portability} 
+          onChange={handleChange} 
+          required 
+        />
+        <FormSelect 
+          name="compatibility" 
+          label="Compatibilidad:" 
+          value={evaluationData.compatibility} 
+          onChange={handleChange} 
+          required 
+        />
         <button type="submit">Enviar</button>
       </form>
 
